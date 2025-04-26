@@ -17,8 +17,8 @@ async def list_students():
     students = []
     async for student in collection.find():
         student["_id"] = str(student["_id"])  # Convert ObjectId to string
-        students.append(student)
-    return students
+        students.append(student) 
+    return students 
 
 @students_router.get("/{student_id}")
 async def get_student(student_id: str):
@@ -27,6 +27,7 @@ async def get_student(student_id: str):
         student["_id"] = str(student["_id"])  # Convert ObjectId to string
         return student
     raise HTTPException(status_code=404, detail="Student not found")
+
 
 @students_router.put("/{student_id}")
 async def update_student(student_id: str, data: UpdateStudentSchema):
