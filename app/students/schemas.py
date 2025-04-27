@@ -2,6 +2,7 @@ from pydantic import BaseModel,Field
 from typing import Optional
 
 class StudentSchema(BaseModel):
+    batch:Optional[str]
     applicationNumber: Optional[str]
     rank: Optional[str]
     registerNo: Optional[str]
@@ -113,17 +114,6 @@ class StudentListQuery(BaseModel):
     limit: int = Field(default=10, ge=1, le=100, description="Number of items per page (max 100)")
     search: Optional[str] = Field(default='', description="Search keyword for filtering students")
     community: Optional[str] = Field(default='', description="Community identifier for filtering students")
-    batch:int=''
+    batch:int=0
 
 
-# --- Models ---
-
-class UserCreate(BaseModel):
-    email: str
-    password: str
-    role: str
-
-class UserUpdate(BaseModel):
-    email: Optional[str] = None
-    password: Optional[str] = None
-    role: Optional[str] = None

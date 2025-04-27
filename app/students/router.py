@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException,Depends
 from config.database import db
-from students.schemas import StudentSchema, UpdateStudentSchema,StudentListQuery,UserCreate,UserUpdate
+from students.schemas import StudentSchema, UpdateStudentSchema,StudentListQuery
 from students.controller import list_students_controller
 # from students.fakedata import generate_fake_student
 from bson import ObjectId
