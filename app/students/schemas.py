@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel,Field
 from typing import Optional
 
 class StudentSchema(BaseModel):
@@ -104,3 +104,26 @@ class StudentSchema(BaseModel):
 
 class UpdateStudentSchema(StudentSchema):
     pass
+
+
+class StudentListQuery(BaseModel):
+    page: int = Field(default=1, ge=1, description="Page number, must be 1 or greater")
+    sort_by:Optional[str] = Field(default='')
+    sort_dir: Optional[str] = Field(default='')
+    limit: int = Field(default=10, ge=1, le=100, description="Number of items per page (max 100)")
+    search: Optional[str] = Field(default='', description="Search keyword for filtering students")
+    community: Optional[str] = Field(default='', description="Community identifier for filtering students")
+    batch:int=''
+
+
+# --- Models ---
+
+class UserCreate(BaseModel):
+    email: str
+    password: str
+    role: str
+
+class UserUpdate(BaseModel):
+    email: Optional[str] = None
+    password: Optional[str] = None
+    role: Optional[str] = None

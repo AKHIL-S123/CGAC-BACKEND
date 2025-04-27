@@ -4,3 +4,6 @@ motor
 pydantic
 python-dotenv
 pymango[srv]
+pandas
+openpyxl
+python-jose[cryptography]
