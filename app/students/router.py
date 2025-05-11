@@ -83,6 +83,12 @@ async def update_student(student_id: str, data: UpdateStudentSchema):
         return {"message": "Student updated"}
     raise HTTPException(status_code=404, detail="Student not found or nothing changed")
 
+
+@students_router.delete("/delete-all")
+async def delete_all_students():
+    result = await collection.delete_many({})
+    return {"message": f"{result.deleted_count} student records deleted."}
+
 @students_router.delete("/{student_id}")
 async def delete_student(student_id: str):
     result = await collection.delete_one({"_id": ObjectId(student_id)})

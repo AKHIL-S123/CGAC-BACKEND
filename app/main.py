@@ -8,6 +8,7 @@ origins = [
     "http://localhost:3000",  # Example for local development
     "https://your-frontend-domain.com",  # Add your frontend's domain here
     # You can also use '*' to allow all origins, but be cautious with that
+    "http://localhost:5173",
     "*"
 ]
 

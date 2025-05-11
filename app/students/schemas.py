@@ -1,30 +1,30 @@
-from pydantic import BaseModel,Field
+from pydantic import BaseModel, Field
 from typing import Optional
 
 class StudentSchema(BaseModel):
-    batch:Optional[str]
-    applicationNumber: Optional[str]
-    rank: Optional[str]
+    # Basic Info
+    name: Optional[str]
+    nameAadhaar:Optional[str]
+    nameCertificate:Optional[str]
+    gender: Optional[str]
     registerNo: Optional[str]
     rollNo: Optional[str]
     emisNo: Optional[str]
     umisNo: Optional[str]
-    degree: Optional[str]
-    course: Optional[str]
-    mediumOfStudy: Optional[str]
-    percentageOfMarks: Optional[str]
-    name: Optional[str]
+
+     #student personal info
+   
     mobile: Optional[str]
     whatsappNo: Optional[str]
     email: Optional[str]
     aadhaarNumber: Optional[str]
+    dateOfBirth: Optional[str]
+    bloodGroup: Optional[str]
+    nationality: Optional[str]
     religion: Optional[str]
     community: Optional[str]
     caste: Optional[str]
     communityCertificateNo: Optional[str]
-    dateOfBirth: Optional[str]
-    gender: Optional[str]
-    bloodGroup: Optional[str]
     pwd: Optional[str]
     typesOfDisability: Optional[str]
     percentageOfDisability: Optional[str]
@@ -32,11 +32,40 @@ class StudentSchema(BaseModel):
     ncc: Optional[str]
     sports: Optional[str]
     categoryOfSports: Optional[str]
+    presentHouseNo:  Optional[str]
+    presentStreet:  Optional[str]
+    presentPlace: Optional[str]
+    presentPanchayath: Optional[str] 
+    presentTaluk: Optional[str]
+    presentDistrict:  Optional[str]
+    PresentPin:Optional[str]
+
+    permanentHouseNo:  Optional[str]
+    permanentStreet:  Optional[str]
+    permanentPlace: Optional[str]
+    permanentPanchayath: Optional[str] 
+    permanentTaluk: Optional[str]
+    permanentDistrict:  Optional[str]
+    permanentPin:Optional[str]
+
+#    admission information
+    applicationNumber: Optional[str]
+    rank: Optional[str]
+    cutoff: Optional[str]
+    batch: Optional[str] 
+    stream: Optional[str]  # newly added
+    degree: Optional[str]
+    course: Optional[str]
+    courseType: Optional[str]  # newly added
+    mediumOfStudy: Optional[str]
     admissionQuota: Optional[str]
     dateOfAdmission: Optional[str]
     admissionNumber: Optional[str]
-    presentAddress: Optional[str]
-    communicationAddress: Optional[str]
+    hostlerOrDayScholar: Optional[str]    
+    studentStatus: Optional[str]  # newly added
+
+    # FAMILY INFORMATION
+   
     fatherName: Optional[str]
     fatherMobile: Optional[str]
     fathersOccupation: Optional[str]
@@ -47,11 +76,32 @@ class StudentSchema(BaseModel):
     mothersEducation: Optional[str]
     guardianName: Optional[str]
     guardianNumber: Optional[str]
+    singleGirlChild: Optional[str]  # newly added
     singleParent: Optional[str]
     firstGraduate: Optional[str]
     firstGraduateCertificateNo: Optional[str]
     incomeCertificateNo: Optional[str]
     annualIncome: Optional[str]
+
+
+    presentHouseNo: Optional[str]
+    presentStreet: Optional[str]
+    presentPlace: Optional[str]
+    presentPanchayath: Optional[str]
+    presentTaluk: Optional[str]
+    presentDistrict: Optional[str]
+    presentPin: Optional[str]
+
+
+    permanentHouseNo: Optional[str]
+    permanentStreet: Optional[str]
+    permanentPlace: Optional[str]
+    permanentPanchayath: Optional[str]
+    permanentTaluk: Optional[str]
+    permanentDistrict: Optional[str]
+    permanentPin: Optional[str]
+
+    # School History
 
     viStandardSchoolName: Optional[str]
     viStandardCity: Optional[str]
@@ -95,13 +145,19 @@ class StudentSchema(BaseModel):
     xiiStandardYearStart: Optional[str]
     xiiStandardYearEnd: Optional[str]
 
+    # Academic Marks
+    percentageOfMarksSSLC: Optional[int]  # newly added
+    percentageOfMarksHSC1: Optional[int]  # newly added
+    percentageOfMarksHSC2: Optional[int]  # newly added
+
+    # Bank Info
     bankName: Optional[str]
     branch: Optional[str]
     ifsc: Optional[str]
     micr: Optional[str]
     accountType: Optional[str]
     bankAccountNo: Optional[str]
-    hostlerOrDayScholar: Optional[str]
+
 
 class UpdateStudentSchema(StudentSchema):
     pass
