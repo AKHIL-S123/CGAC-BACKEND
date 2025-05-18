@@ -38,7 +38,7 @@ class StudentSchema(BaseModel):
     presentPanchayath: Optional[str] 
     presentTaluk: Optional[str]
     presentDistrict:  Optional[str]
-    PresentPin:Optional[str]
+    presentPin:Optional[str]
 
     permanentHouseNo:  Optional[str]
     permanentStreet:  Optional[str]
